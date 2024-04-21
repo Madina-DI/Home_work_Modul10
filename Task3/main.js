@@ -4,7 +4,7 @@ const btn = document.getElementById('send-button');
 const location = document.getElementById('location_chat');
 const chatMessages = document.querySelector('.chat-messages');
 
-const serverURL = 'wss://echo-ws-service.herokuapp.com/';
+const serverURL = 'ws://echo-ws-service.herokuapp.com';
 const webSocket = new WebSocket(serverURL);
 
 btn.addEventListener('click', () =>{
@@ -37,7 +37,7 @@ function writeToScreen(message, position = 'flex-end'){
     const chatEl = document.createElement('p');
     chatEl.classList.add('chat-messages');
     chatEl.style.alignSelf = position;
-    chatMessages.innerHTML = message;
+    chatEl.innerHTML = message;
     chatMessages.appendChild(chatEl);
 };
 
